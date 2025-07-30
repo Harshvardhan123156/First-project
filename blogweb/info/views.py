@@ -4,9 +4,11 @@ def home(request):
     return HttpResponse("hey this if the infrmation section.")
 
 def about(request):
-    return HttpResponse("it is all about us for now.")
+    return render(request , 'info/about.html')
 
 def contact(request):
-    return HttpResponse("contact us for further quesries")
+    if request.method=='POST':
+        print("we are using post")
+    return render(request , 'info/contact.html')
 
 # Create your views here.
